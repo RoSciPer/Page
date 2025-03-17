@@ -1,0 +1,102 @@
+
+
+header {
+    background-color: hwb(212 36% 8%);
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: hwb(118 71% 19%);
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #dfe6e9;
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+main section {
+    margin-bottom: 40px;
+}
+
+main h1, main h2 {
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+main p {
+    margin-bottom: 20px;
+}
+
+.service {
+    margin-bottom: 20px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: hwb(212 36% 8%);
+    padding: 20px 0;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+.section-offset {
+    padding-top: 80px; /* Pielāgojiet šo vērtību atkarībā no galvenes augstuma */
+}
+.flex-container {
+    display: flex;
+    align-items: center; /* Vertikāli centrē elementi, ja nepieciešams */
+}
+
+.flex-container h3,
+.flex-container p {
+    margin: 0 10px; /* Pievieno nelielu atstarpi starp elementiem */
+}

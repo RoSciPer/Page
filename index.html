@@ -172,11 +172,29 @@ function chooseType(type) {
 
 function submitForm(e) {
     e.preventDefault();
-    // Te vari pievienot fetch/ajax uz backend, ja vajag
-    showStep('step-success');
+    const data = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        vin: document.getElementById('vin').value,
+        payment: document.getElementById('payment').value,
+        months: document.getElementById('months').value,
+        total_sum: document.getElementById('total_sum').value,
+        residual_value: document.getElementById('residual_value').value,
+        leasing_type: leasingType
+    };
+    fetch('http://192.168.88.168:8069/leasing_cars/submit_application', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    }).then(r => {
+        if (r.ok) showStep('step-success');
+        else alert('Kļūda, dati netika nosūtīti!');
+    }).catch(() => alert('Neizdevās savienoties ar serveri!'));
 }
 
 document.addEventListener("DOMContentLoaded", updateTexts);
 </script>
 </body>
 </html>
+

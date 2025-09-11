@@ -185,7 +185,7 @@ function submitForm(e) {
     fetch('https://odoo.bidsolana.xyz/leasing_cars/submit_application', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data)
+        body: JSON.stringify({params: data})
     }).then(r => {
         if (r.ok) showStep('step-success');
         else alert('Kļūda, dati netika nosūtīti!');
@@ -196,6 +196,7 @@ document.addEventListener("DOMContentLoaded", updateTexts);
 </script>
 </body>
 </html>
+
 
 
 

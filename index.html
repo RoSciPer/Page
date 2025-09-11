@@ -169,7 +169,6 @@ function chooseType(type) {
     showStep('step-form');
     document.getElementById('operativais-fields').style.display = (leasingType === 'operativais') ? '' : 'none';
 }
-
 function submitForm(e) {
     e.preventDefault();
     const data = {
@@ -177,10 +176,10 @@ function submitForm(e) {
         phone: document.getElementById('phone').value,
         email: document.getElementById('email').value,
         vin: document.getElementById('vin').value,
-        payment: document.getElementById('payment').value,
-        months: document.getElementById('months').value,
-        total_sum: document.getElementById('total_sum').value,
-        residual_value: document.getElementById('residual_value').value,
+        payment: parseFloat(document.getElementById('payment').value) || 0,
+        months: parseInt(document.getElementById('months').value) || 0,
+        total_sum: parseFloat(document.getElementById('total_sum').value) || 0,
+        residual_value: parseFloat(document.getElementById('residual_value').value) || 0,
         leasing_type: leasingType
     };
     fetch('https://odoo.bidsolana.xyz/leasing_cars/submit_application', {
@@ -197,6 +196,7 @@ document.addEventListener("DOMContentLoaded", updateTexts);
 </script>
 </body>
 </html>
+
 
 
 

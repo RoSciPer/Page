@@ -183,7 +183,7 @@ function submitForm(e) {
         residual_value: document.getElementById('residual_value').value,
         leasing_type: leasingType
     };
-    fetch('http://odoo.bidsolana.xyz/leasing_cars/submit_application', {
+    fetch('https://odoo.bidsolana.xyz/leasing_cars/submit_application', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
@@ -197,5 +197,6 @@ document.addEventListener("DOMContentLoaded", updateTexts);
 </script>
 </body>
 </html>
+
 
 
